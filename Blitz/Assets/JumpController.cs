@@ -5,14 +5,24 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     Rigidbody2D rb;
+    
+    [Header("Jump System")]
+    [SerializeField] float jumpTime;
     [SerializeField] int jumpPower;
+    [SerializeField] float fallMultiplier;
+    [SerializeField] float jumpMultiplier;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
-    bool isGrounded;
+    Vector2 vecGravity;
+
+    bool isJumping;
+    float jumpCounter;
+
     // Start is called before the first frame update
     void Start()
     {
+        vecGravity = new Vector2(0, -Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D> ();
         
     }
@@ -20,10 +30,43 @@ public class JumpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.8f, 0.3f), CapsuleDirection2D.Horizontal, 0, groundLayer);
         
-        if(Input.GetButtonDown("Jump") && isGrounded) {
+        if(Input.GetButtonDown("Jump") && isGrounded()) {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            isJumping = true;
+            jumpCounter = 0;
         }
+
+        if(rb.velocity.y > 0 && isJumping) {
+            jumpCounter += Time.deltaTime;
+            if(jumpCounter > jumpTime) isJumping = false;
+
+            float t = jumpCounter / jumpTime;
+            float currentJumpM = jumpMultiplier;
+
+            if (t > 0.5f) {
+                currentJumpM = jumpMultiplier * (1 - t);
+            }
+        
+
+            rb.velocity += vecGravity * jumpMultiplier * Time.deltaTime;
+        }
+
+        if(Input.GetButtonUp("Jump")) {
+            isJumping = false;
+            jumpCounter = 0;
+
+            if (rb.velocity.y > 0) {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.6f);
+            }
+        }
+
+        if(rb.velocity.y < 0) {
+            rb.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
+        }
+    }
+
+    bool isGrounded() {
+        return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1.1f, 0.3f), CapsuleDirection2D.Horizontal, 0, groundLayer);
     }
 }

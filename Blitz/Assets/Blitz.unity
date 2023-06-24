@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &896264537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896264538}
+  m_Layer: 0
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896264538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896264537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6635284357680212015}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333004895
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +463,14 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6357913028388974494, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9424186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357913028388974494, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.028790712
+      objectReference: {fileID: 0}
     - target: {fileID: 6771666759763141568, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
       propertyPath: m_Name
       value: Player
@@ -482,7 +521,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9036375236189041241, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896264538}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6771666759763141568, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
       insertIndex: -1
@@ -502,8 +544,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6635284357680212010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca344231a886d18e09a31e0825e84cec, type: 3}
+  m_Script: {fileID: 11500000, guid: df2a933c46e66862b93bcaac5f73388d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 600
-  isGrounded: 0
+  jumpTime: 0
+  jumpPower: 15
+  fallMultiplier: 0
+  jumpMultiplier: 0
+  groundCheck: {fileID: 896264538}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!4 &6635284357680212015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9036375236189041241, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+  m_PrefabInstance: {fileID: 6635284357680212009}
+  m_PrefabAsset: {fileID: 0}
