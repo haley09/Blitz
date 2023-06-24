@@ -340,6 +340,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 4658063718998764977, guid: 59428e77bee285ee3b2f1fe75eedfd1b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658063718998764977, guid: 59428e77bee285ee3b2f1fe75eedfd1b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8341402207362291377, guid: 59428e77bee285ee3b2f1fe75eedfd1b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -408,6 +416,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3013566479855943498, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1033731
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013566479855943498, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013566479855943498, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11332201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765320993043964736, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6771666759763141568, guid: 92adacb196edef593ac18494cc6ac2ea, type: 3}
       propertyPath: m_Name
       value: Player
@@ -481,3 +505,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca344231a886d18e09a31e0825e84cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 600
+  isGrounded: 0
