@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 09b0837560c77294ba1a7dcfc0515075
+guid: 7a8ecb609d4fd834d955f6968c0f3d7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rise
+      name: Up
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 72
-        height: 56
+        x: 8
+        y: 1062
+        width: 78
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 631b62d1ef2c8204ba7822c576b897bb
-      internalID: 1525753096
+      spriteID: 65e6fb7c9f4657443934c737d28e584d
+      internalID: -1417201819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flight
+      name: Straight
       rect:
         serializedVersion: 2
-        x: 92
-        y: 16
-        width: 79
+        x: 105
+        y: 1062
+        width: 78
         height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ff79236d03b9e46b446588cb306624
-      internalID: -740375641
+      spriteID: 46cceda224db3f241833c98b682969b6
+      internalID: 1801957205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dive
+      name: Down
       rect:
         serializedVersion: 2
-        x: 191
-        y: 5
-        width: 76
-        height: 37
+        x: 200
+        y: 1049
+        width: 78
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,29 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f7789d46363c3c43a2eb03ffde90815
-      internalID: 716224430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Death
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 4
-        width: 79
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a743bf0471ccc5542b5007fccd17038a
-      internalID: 1480250347
+      spriteID: b32b871feeff1754da8d21578a10f7be
+      internalID: 1189613080
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Death: 1480250347
-      Dive: 716224430
-      Flight: -740375641
-      Rise: 1525753096
+      Down: 1189613080
+      Straight: 1801957205
+      Up: -1417201819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
