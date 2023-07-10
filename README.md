@@ -2,4 +2,4 @@
 
 Summer 2023 -  SDEV265 -  Project
 
-Made by: Samantha Short, Justin Akridge, Will Wang, Sam Odugbesan and Haley Abel
+Made by: Samantha Short, Justin Akridge, Will Chang, Sam Odugbesan and Haley Abel
