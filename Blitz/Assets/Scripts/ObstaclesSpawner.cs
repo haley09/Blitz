@@ -12,12 +12,10 @@ public class ObstaclesSpawner : MonoBehaviour
 
     void Update()
     {
-
         timer -= Time.deltaTime;
 
         if (timer <= 0)
         {
-
             Vector3 temp = transform.position;
             temp.y = Random.Range(min_Y, max_Y);
 
@@ -25,44 +23,6 @@ public class ObstaclesSpawner : MonoBehaviour
             Instantiate(obstacles[rand], temp, obstacles[rand].transform.rotation);
 
             timer = delayTimer;
-
         }
-
     }
-
-
-} // class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

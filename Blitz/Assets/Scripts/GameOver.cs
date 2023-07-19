@@ -7,7 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-   public GameObject GameOverUI;
+    public GameObject GameOverUI;
 
     public void Restart()
     {

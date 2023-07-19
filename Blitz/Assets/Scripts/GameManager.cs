@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour {
     public GameObject gameOver;
     private int score;
 
-    public void Play() {
+    public void Play() 
+    {
         score = 0;
         scoreText.text = score.ToString();
         gameOver.SetActive(false);
@@ -16,24 +17,28 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 1f;
         player.enabled = true;
 
-        Pipes[] pipes = FindObjectsOfType<Pipes>();
+        Asteroids[] asteroids = FindObjectsOfType<Asteroids>();
 
-        for (int i = 0; i < pipes.Length; i++) {
-            Destroy(pipes[i].gameObject);
+        for (int i = 0; i < asteroids.Length; i++) {
+            Destroy(asteroids[i].gameObject);
         }
     }
 
-    public void Pause() {
+    public void Pause() 
+    {
         Time.timeScale = 0f;
         player.enabled = false;
     }
 
-    public void GameOver() {
+    public void GameOver() 
+    {
         gameOver.SetActive(true);
 
     }
 
-    public void IncreaseScore() {
+    // Currently no score to keep track of
+    public void IncreaseScore() 
+    {
         score++;
         scoreText.text = score.ToString();
     }
