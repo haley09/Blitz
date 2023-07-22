@@ -19,6 +19,5 @@ public class Spawner : MonoBehaviour
     private void Spawn() {
         GameObject asteroids = Instantiate(prefab, transform.position, Quaternion.identity);
         asteroids.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);
-
     }
 }
