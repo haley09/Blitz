@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
+      Debug.Log("Game over");
       gameOver.SetActive(true);
       playButton.SetActive(true);
       Pause();
