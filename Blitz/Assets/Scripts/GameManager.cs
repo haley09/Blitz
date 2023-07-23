@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour {
   }
 
   public void Play() {
-//    score = 0;
-//    scoreText.text = score.ToString();
+    // TODO[]: Fix score after reseting in UpdateScore()
+    score = 0;
+    scoreText.text = score.ToString();
     playButton.SetActive(false);
     gameOver.SetActive(false);
     Time.timeScale = 1f;
@@ -35,9 +36,11 @@ public class GameManager : MonoBehaviour {
   }
 
   public void GameOver() {
-    Debug.Log("Game over");
+    //Call stop function in update score and reset
     gameOver.SetActive(true);
     playButton.SetActive(true);
     Pause();
+    score = 0;
+    scoreText.text = score.ToString();
   }
 }

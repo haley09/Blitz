@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,22 +6,29 @@ using UnityEngine.UI;
 
 public class UpdateScore : MonoBehaviour {
   public Text scoreText;
-  public float score;
+  public double score;
   public float increasedPerSecond; 
+  private bool flag = false;
   // Start is called before the first frame update
-  void Start() {
+
+  
+  public void Start() {
     score = 0f;
     increasedPerSecond = 1f; 
   }
 
   // Update is called once per frame
-  void Update() {
-    Debug.Log(GameObject.Find("gameOver"));
-    score += Time.deltaTime * increasedPerSecond; 
+  public void Update() {
+    if(!flag) {
+      score += Math.Truncate(Time.time);
+      scoreText.text = score.ToString();
+    }
+  }
+
+  public void Reset() {
+    flag = true;
+    score = 0;
     scoreText.text = score.ToString();
   }
 
-  void ResetScore() {
-    score = 0;
-  }
 }
