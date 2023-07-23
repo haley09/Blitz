@@ -16,10 +16,12 @@ public class GameManager : MonoBehaviour {
 
   public void Play() {
     // TODO[]: Fix score after reseting in UpdateScore()
+    // We may need to include this in the same script
     score = 0;
     scoreText.text = score.ToString();
     playButton.SetActive(false);
     gameOver.SetActive(false);
+    GetComponent<UpdateScore>().Update();
     Time.timeScale = 1f;
     player.enabled = true;
 
