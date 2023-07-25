@@ -5,13 +5,13 @@ public class GameManager : MonoBehaviour {
 
   public Player player;
   public Text scoreText;
-  public GameObject playButton;
+  //public GameObject playButton;
   public GameObject gameOver;
   private float score;
 
   private void Awake() {
     Application.targetFrameRate = 60;
-    Pause();
+    //Pause();
   }
 
   public void Play() {
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
     // We may need to include this in the same script
     score = 0;
     scoreText.text = score.ToString();
-    playButton.SetActive(false);
+    //playButton.SetActive(false);
     gameOver.SetActive(false);
     GetComponent<UpdateScore>().Update();
     Time.timeScale = 1f;
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour {
   public void GameOver() {
     //Call stop function in update score and reset
     gameOver.SetActive(true);
-    playButton.SetActive(true);
-    Pause();
+    //playButton.SetActive(true);
+    //Pause();
     score = 0;
     scoreText.text = score.ToString();
   }
