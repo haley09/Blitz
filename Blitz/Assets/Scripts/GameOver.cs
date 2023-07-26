@@ -24,5 +24,6 @@ public class GameOver : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
-    }
+    } 
+    
 }

@@ -31,4 +31,11 @@ public class Stopwatch : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         TimeText.text = time.ToString(@"mm\:ss\:fff");
     }
+
+    public void Reset() {
+    flag = true;
+    score = 0;
+    scoreText.text = score.ToString();
+  }
+
 }
