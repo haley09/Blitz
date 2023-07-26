@@ -47,10 +47,11 @@ public class Player : MonoBehaviour {
     spriteRenderer.sprite = sprites[spriteIndex];
   }
 
-  private void OnTriggerEnter2D(Collider2D other) {
-    if (other.gameObject.tag == "Obstacle") {
+  private void OnCollisionEnter2D(Collider2D collision) {
+    if (other.gameObject.CompareTag("Obstacle")) {
       FindObjectOfType<GameManager>().GameOver();
       FindObjectOfType<UpdateScore>().Reset();
+      Pause();
     }   
   }
 }

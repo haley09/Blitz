@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
   public Player player;
   public Text scoreText;
   //public GameObject playButton;
+  public GameObject quitButton;
   public GameObject gameOver;
   private float score;
 
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour {
   public void Pause() {
     Time.timeScale = 0f;
     player.enabled = false;
+  }
+
+  public void QuitGame () {
+      Debug.Log("QUIT!");
+      Application.Quit();
   }
 
   public void GameOver() {

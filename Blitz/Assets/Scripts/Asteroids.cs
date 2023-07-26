@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class Asteroids : MonoBehaviour {
 
-    public float speed = 5f;
-    private float leftEdge;
+    public float speed = 10.0f;
+    private Rigidbody2D rb;
+    private Vector2 screenBounds;
 
     private void Start() {
-        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
+        rb = this.GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(-speed, 0);
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector2 (18, 10));
     }
 
     private void Update() {
         transform.position += Vector3.left * speed * Time.deltaTime;
-        if (transform.position.x < leftEdge) {
-            Destroy(gameObject);
+        if (transform.position.x < screenBounds.x) {
+            Destroy(this.gameObject);
         }
     }
 }
